@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakesh R - Java Full Stack Developer</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CINEMATIC SMOOTH SCROLL ENGINE */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Prevents sticky header from overlapping section titles */
+        section {
+            scroll-margin-top: 80px; 
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #0d0d0d;
+            color: #e5e5e5;
+        }
+        .mono {
+            font-family: 'Space Mono', monospace;
+        }
+        /* Grid Background Effect from IMG_4355.jpg and IMG_4365.jpg */
+        .grid-bg {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+        /* Ticker Animation for Skills from IMG_4360.jpg */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 20s linear infinite;
+        }
+
+        /* CUSTOM ORANGE INTERACTIVE CURSOR EFFECTS */
+        body, a, button, input, textarea, [role="button"], .interactive-target {
+            cursor: none !important;
+        }
+        
+        /* The Outer Circle Wrapper */
+        #custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #f97316;
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9999;
+            transition: width 0.25s cubic-bezier(0.25, 1, 0.5, 1), 
+                        height 0.25s cubic-bezier(0.25, 1, 0.5, 1), 
+                        background-color 0.25s ease;
+        }
+        
+        /* The Centered Solid Orange Dot */
+        #custom-cursor::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 6px;
+            height: 6px;
+            background-color: #f97316;
+            border-radius: 50%;
+        }
+
+        /* Hover Expansion State */
+        #custom-cursor.grow {
+            width: 55px;
+            height: 55px;
+            background-color: rgba(249, 115, 22, 0.15);
+            border-color: #f97316;
+        }
+</style>
+</head>
+<body class="grid-bg selection:bg-orange-500 selection:text-black">
+
+    <div id="custom-cursor"></div>
+
+    <header class="border-b border-neutral-800 bg-[#0d0d0d]/80 backdrop-blur sticky top-0 z-50 px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+            <span class="border border-white px-2 py-0.5 text-xs font-bold tracking-widest mono interactive-target">RR</span>
+            <span class="text-xs text-neutral-400 tracking-wider mono uppercase hidden sm:inline">Rakesh / IT • DEV</span>
+        </div>
+        <nav class="hidden md:flex space-x-6 text-xs font-bold tracking-widest text-neutral-400 mono">
+            <a href="#about" class="hover:text-orange-500 transition interactive-target">ABOUT</a>
+            <a href="#experience" class="hover:text-orange-500 transition interactive-target">EXPERIENCE</a>
+            <a href="#skills" class="hover:text-orange-500 transition interactive-target">SKILLS</a>
+            <a href="#work" class="hover:text-orange-500 transition interactive-target">WORK</a>
+            <a href="#education" class="hover:text-orange-500 transition interactive-target">EDUCATION</a>
+            <a href="#contact" class="hover:text-orange-500 transition interactive-target">CONTACT</a>
+        </nav>
+        <a href="Rakesh R ISE_cv.pdf" class="border border-neutral-700 px-3 py-1.5 text-xs font-bold tracking-widest text-neutral-300 hover:bg-orange-500 hover:text-black hover:border-orange-500 transition mono interactive-target">
+            RESUME 
+        </a>
+    </header>
+
+    <section class="min-h-[85vh] px-6 lg:px-20 py-12 flex flex-col justify-between relative">
+        <div class="flex justify-between items-start text-xs tracking-widest mono text-neutral-400">
+            <div class="flex items-center space-x-2">
+                <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+                <span>OPEN TO OPPORTUNITIES</span>
+            </div>
+            <div>BENGALURU, INDIA • 12°58' N</div>
+        </div>
+
+        <div class="my-auto py-12">
+            <span class="text-xs text-neutral-500 tracking-widest mono block mb-2">001 /</span>
+            <h1 class="text-7xl md:text-9xl font-extrabold uppercase tracking-tighter leading-none select-none interactive-target">
+                RAKESH<br>
+                <span class="text-orange-500">R.</span>
+            </h1>
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 pt-6 border-t border-neutral-800">
+            <div class="max-w-md">
+                <span class="text-xs text-neutral-400 tracking-widest mono uppercase block mb-1">NETWORKS • SYSTEMS • CODE</span>
+                <p class="text-neutral-400 text-sm">Software Engineer experienced in web application development and enterprise IT operations, including networking, system administration, and infrastructure support.</p>
+            </div>
+            <div class="text-left md:text-right">
+                <span class="text-xs text-neutral-500 tracking-widest mono block">CURRENT FOCUS</span>
+                <span class="text-sm text-neutral-300 font-bold">Enterprise web apps • HAL</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-neutral-900">
+
+    <section id="about" class="px-6 lg:px-20 py-20 bg-[#111] grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-12 mb-6">
+            <h2 class="text-5xl md:text-7xl font-extrabold tracking-tighter uppercase mb-2 interactive-target">ABOUT<br>ME.</h2>
+            <p class="text-xs text-neutral-400 tracking-widest mono uppercase">Software Engineer • Web Development • IT Operations • System Support</p>
+        </div>
+
+        <div class="lg:col-span-4 border border-neutral-800 p-2 bg-neutral-900/50 aspect-[3/4] flex flex-col justify-between relative group overflow-hidden interactive-target hover:border-orange-500 transition-colors duration-500">
+            <div class="w-full h-full relative overflow-hidden grayscale hover:grayscale-0 transition duration-500">
+                <img src="graduate photo (1).jpg" alt="Rakesh Graduation Photo" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-orange-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            </div>
+        </div>
+
+        <div class="lg:col-span-8 flex flex-col justify-between space-y-8">
+            <div class="space-y-6">
+                <h3 class="text-xl md:text-3xl font-bold tracking-tight text-white leading-snug interactive-target">
+Information Science Engineer (VTU, 2025) | Software Engineer | Web Development | IT Operations | System Administration</h3>
+                <p class="text-neutral-400 text-sm leading-relaxed max-w-2xl">
+Graduate Trainee Apprentice at Hindustan Aeronautics Limited (HAL), developing internal web applications using front-end and back-end technologies for enterprise teams. Supporting IT operations including network management, system administration, and hardware/software troubleshooting. Working with business teams to understand requirements and deliver internal digital solutions. Contributing to system reliability and smooth IT service operations. Assisting in maintaining enterprise IT infrastructure and application support. Ensuring stable and efficient day-to-day IT environment.</div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-neutral-800 text-center sm:text-left">
+                <div class="interactive-target">
+                    <div class="text-3xl font-extrabold text-white">3+</div>
+                    <div class="text-[10px] tracking-widest mono text-neutral-400 uppercase mt-1">Projects Shipped</div>
+                </div>
+                <div class="interactive-target">
+                    <div class="text-3xl font-extrabold text-white">3+</div>
+                    <div class="text-[10px] tracking-widest mono text-neutral-400 uppercase mt-1">Internships</div>
+                </div>
+                <div class="interactive-target">
+                    <div class="text-3xl font-extrabold text-white">5+</div>
+                    <div class="text-[10px] tracking-widest mono text-neutral-400 uppercase mt-1">Certifications</div>
+                </div>
+                <div class="interactive-target">
+                    <div class="text-3xl font-extrabold text-orange-500">2025</div>
+                    <div class="text-[10px] tracking-widest mono text-neutral-400 uppercase mt-1">ISE Graduate - VTU</div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 text-xs mono text-neutral-400 border-t border-neutral-900">
+                <div class="interactive-target">📍 Bengaluru, India</div>
+                <div>✉️ <a href="mailto:rakeshravi1960@gmail.com" class="hover:text-orange-500 transition interactive-target">rakeshravi1960@gmail.com</a></div>
+                <div>🐙 <a href="https://github.com/Rakesh-iku" target="_blank" class="hover:text-orange-500 transition interactive-target">github.com/Rakesh-iku</a></div>
+                <div>💼 <a href="https://www.linkedin.com/in/rakesh-r-01129a329/" class="hover:text-orange-500 transition interactive-target">linkedin: rakesh-r</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="px-6 lg:px-20 py-20 border-t border-neutral-900">
+        <div class="mb-12">
+            <span class="text-xs text-neutral-500 tracking-widest mono block mb-2">003 / EXPERIENCE / 2025 ↗</span>
+            <h2 class="text-5xl md:text-7xl font-extrabold tracking-tighter uppercase interactive-target">WHERE I<br>OPERATE.</h2>
+            <p class="text-xs text-neutral-400 tracking-widest mono uppercase mt-2">Real-world enterprise IT × software at HAL.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-8 border-t border-neutral-800">
+            <div class="lg:col-span-4 space-y-4">
+                <span class="text-xs tracking-widest text-neutral-500 mono uppercase block">AEROSPACE • ENTERPRISE IT<br>2025 - PRESENT</span>
+                <h3 class="text-2xl font-bold text-white leading-tight interactive-target">Graduate Trainee Apprentice — IT Department</h3>
+                <p class="text-orange-500 font-bold text-sm interactive-target">Hindustan Aeronautics Limited (HAL)</p>
+                <p class="text-xs text-neutral-500 mono">BENGALURU, INDIA</p>
+                
+                <div class="flex flex-wrap gap-2 pt-2">
+                    <span class="border border-neutral-800 px-2 py-1 text-[10px] mono text-neutral-400 interactive-target">IT DEPT</span>
+                    <span class="border border-neutral-800 px-2 py-1 text-[10px] mono text-neutral-400 interactive-target">PSU GOVT</span>
+                    <span class="border border-neutral-800 px-2 py-1 text-[10px] mono text-neutral-400 interactive-target">B-LR SITE</span>
+                </div>
+            </div>
+
+            <div class="lg:col-span-8">
+                <p class="text-neutral-300 font-medium mb-6 text-base">
+                    Contributing to enterprise IT operations across infrastructure, end-user support and internal web application development.
+                </p>
+                <ul class="space-y-4 text-sm text-neutral-400 font-light mono">
+                    <li class="flex items-start interactive-target"><span class="text-orange-500 mr-3">[01]</span> Design, develop, and maintain internal web applications using modern front-end and back-end technologies to deliver scalable, user-focused enterprise solutions.</li>
+                    <li class="flex items-start interactive-target"><span class="text-orange-500 mr-3">[02]</span> Work on enhancing and optimizing existing applications by implementing new features, improving performance, and ensuring code quality and maintainability.</li>
+                    <li class="flex items-start interactive-target"><span class="text-orange-500 mr-3">[03]</span> Configure, monitor, and maintain LAN/WAN networks including IP addressing, DNS, DHCP, routers, switches, and Windows-based systems.</li>
+                    <li class="flex items-start interactive-target"><span class="text-orange-500 mr-3">[04]</span> Provide hardware and software troubleshooting along with end-user technical support to ensure uninterrupted business operations.</li>
+                    <li class="flex items-start interactive-target"><span class="text-orange-500 mr-3">[05]</span> Collaborate with cross-functional teams to analyze requirements and implement technology-driven solutions while following IT service management best practices.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-neutral-900 border-y border-neutral-800 overflow-hidden py-4 flex select-none">
+        <div class="flex whitespace-nowrap space-x-12 animate-marquee text-2xl md:text-4xl font-extrabold uppercase tracking-widest text-neutral-700">
+            <span>JAVA</span> ★</span> <span>PYTHON ★</span> <span>REACT ★</span> <span>JAVASCRIPT ★</span>  <span>ORACLE DATABASE ★</span> <span>Networking ★</span> <span>TypeScript ★</span> <span>Tailwind ★</span> 
+            <span>JAVA ★</span> <span>PYTHON ★</span> <span>REACT ★</span> <span>JAVASCRIPT ★</span>   <span>ORACLE DATABASE ★</span>  <span>Networking ★</span> <span>TypeScript ★</span> <span>Tailwind ★</span> 
+        </div>
+    </div>
+
+    <section id="skills" class="px-6 lg:px-20 py-20">
+        <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between">
+            <div>
+                <h2 class="text-5xl md:text-7xl font-extrabold tracking-tighter uppercase interactive-target">THE TOOLBOX.</h2>
+                <p class="text-xs text-neutral-400 tracking-widest mono uppercase mt-2">From low-level networks to high-level frameworks.</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 border-t border-neutral-800 pt-8">
+            <div class="border border-neutral-800 p-6 bg-neutral-900/20 interactive-target">
+                <div class="flex justify-between items-center mb-4"><span class="text-sm font-bold text-white">Languages</span><span class="text-xs text-neutral-600 mono">01</span></div>
+                <div class="flex flex-wrap gap-2 text-xs mono">
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">JAVA</span>
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">PYTHON</span>
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">JAVASCRIPT</span>
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">TYPESCRIPT</span>                   
+                   
+                </div>
+            </div>
+
+            <div class="border border-neutral-800 p-6 bg-neutral-900/20 interactive-target">
+                <div class="flex justify-between items-center mb-4"><span class="text-sm font-bold text-white">Frameworks & Web</span><span class="text-xs text-neutral-600 mono">02</span></div>
+                <div class="flex flex-wrap gap-2 text-xs mono">
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">REACT</span>
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">NODE.JS</span>
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">REST APIS</span>
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">TAILWIND</span>
+                </div>
+            </div>
+
+            <div class="border border-neutral-800 p-6 bg-neutral-900/20 interactive-target">
+                <div class="flex justify-between items-center mb-4"><span class="text-sm font-bold text-white">Networking & IT Ops</span><span class="text-xs text-neutral-600 mono">03</span></div>
+                <div class="flex flex-wrap gap-2 text-xs mono">
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">LAN/WAN</span>
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">DNS</span>
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">DHCP</span>
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">TCP/IP</span>
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">ROUTING & SWITCHING</span>
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">WINDOWS ADMIN</span>
+                </div>
+            </div>
+
+            <div class="border border-neutral-800 p-6 bg-neutral-900/20 interactive-target">
+                <div class="flex justify-between items-center mb-4"><span class="text-sm font-bold text-white">Database & AI</span><span class="text-xs text-neutral-600 mono">04</span></div>
+                <div class="flex flex-wrap gap-2 text-xs mono">
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">MYSQL</span>
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">OPENCV</span>                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">IOT</span>
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">COMPUTER VISION</span>
+                </div>
+            </div>
+
+            <div class="border border-neutral-800 p-6 bg-neutral-900/20 interactive-target">
+                <div class="flex justify-between items-center mb-4"><span class="text-sm font-bold text-white">Tools</span><span class="text-xs text-neutral-600 mono">05</span></div>
+                <div class="flex flex-wrap gap-2 text-xs mono">
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">GIT</span>
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">GITHUB</span>
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">VS CODE</span>
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">LINUX</span>
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">JIRA</span>
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">MS WORD</span>
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">MS EXCEL</span>
+                </div>
+            </div>
+
+            <div class="border border-neutral-800 p-6 bg-neutral-900/20 interactive-target">
+                <div class="flex justify-between items-center mb-4"><span class="text-sm font-bold text-white">Soft Skills</span><span class="text-xs text-neutral-600 mono">06</span></div>
+                <div class="flex flex-wrap gap-2 text-xs mono">
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">PROBLEM SOLVING</span>
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">CROSS-TEAM COLLAB</span>
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">DOCUMENTATION</span>
+                    <span class="bg-black border border-neutral-800 px-2 py-1 text-neutral-300">OWNERSHIP</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="px-6 lg:px-20 py-20 border-t border-neutral-900 bg-[#0b0b0b]">
+        <div class="mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+            <div>
+                <span class="text-xs text-neutral-500 tracking-widest mono block mb-2">005 / SELECTED / WORK</span>
+                <h2 class="text-5xl md:text-7xl font-extrabold tracking-tighter uppercase interactive-target">THINGS I'VE<br>SHIPPED.</h2>
+            </div>
+            <div class="text-xs mono text-neutral-400">Code on GitHub. Click card indicators to view repositories.</div>
+        </div>
+
+        <div class="space-y-6 border-t border-neutral-800 pt-8">
+            <div class="border border-neutral-800 p-8 bg-neutral-900/40 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center hover:border-neutral-700 transition group interactive-target">
+                <div class="lg:col-span-5 space-y-2">
+                    <div class="flex items-center space-x-3 text-xs mono text-neutral-400">
+                        <span>01 /</span>
+                        <span class="text-orange-500 uppercase">Computer Vision • IOT</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white group-hover:text-orange-500 transition">Driver Drowsiness Detection & Alert System</h3>
+                    <span class="text-xs mono text-neutral-500 block">2024 - 2025</span>
+                </div>
+                <div class="lg:col-span-5 text-sm text-neutral-400 font-light">
+                    Real-time driver alertness monitor built with Python + OpenCV. Detects fatigue through blink-rate analysis and triggers IoT-based audible alerts to prevent road accidents.
+                </div>
+                <div class="lg:col-span-2 flex flex-col items-start lg:items-end gap-3">
+                    <a href="https://github.com/Rakesh-iku" target="_blank" class="text-xs mono border border-neutral-800 px-3 py-1.5 hover:bg-orange-500 hover:text-black hover:border-orange-500 transition flex items-center gap-1 interactive-target">REPO ↗</a>
+                    <div class="flex flex-wrap gap-1 lg:justify-end text-[9px] mono text-neutral-500">
+                        <span>PYTHON</span> • <span>OPENCV</span> • <span>IOT</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border border-neutral-800 p-8 bg-neutral-900/40 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center hover:border-neutral-700 transition group interactive-target">
+                <div class="lg:col-span-5 space-y-2">
+                    <div class="flex items-center space-x-3 text-xs mono text-neutral-400">
+                        <span>02 /</span>
+                        <span class="text-orange-500 uppercase">AI • NLP • SPEECH</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white group-hover:text-orange-500 transition">Jarvis — Virtual AI Assistant</h3>
+                    <span class="text-xs mono text-neutral-500 block">2023 - 2024</span>
+                </div>
+                <div class="lg:col-span-5 text-sm text-neutral-400 font-light">
+                    Voice-driven personal assistant in Python. Handles search, calculations and system automation using natural language and speech recognition APIs.
+                </div>
+                <div class="lg:col-span-2 flex flex-col items-start lg:items-end gap-3">
+                    <a href="https://github.com/Rakesh-iku" target="_blank" class="text-xs mono border border-neutral-800 px-3 py-1.5 hover:bg-orange-500 hover:text-black hover:border-orange-500 transition flex items-center gap-1 interactive-target">REPO ↗</a>
+                    <div class="flex flex-wrap gap-1 lg:justify-end text-[9px] mono text-neutral-500">
+                        <span>PYTHON</span> • <span>NLP</span> • <span>APIS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border border-neutral-800 p-8 bg-neutral-900/40 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center hover:border-neutral-700 transition group interactive-target">
+                <div class="lg:col-span-5 space-y-2">
+                    <div class="flex items-center space-x-3 text-xs mono text-neutral-400">
+                        <span>03 /</span>
+                        <span class="text-orange-500 uppercase">Web App • UX</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white group-hover:text-orange-500 transition">Workout & Diet Planner</h3>
+                    <span class="text-xs mono text-neutral-500 block">2023 - 2024</span>
+                </div>
+                <div class="lg:col-span-5 text-sm text-neutral-400 font-light">
+                    Responsive fitness web app for workout tracking and meal planning tailored to user goals. Built mobile-first with a focus on clean UX and quick logging.
+                </div>
+                <div class="lg:col-span-2 flex flex-col items-start lg:items-end gap-3">
+                    <a href="https://github.com/Rakesh-iku" target="_blank" class="text-xs mono border border-neutral-800 px-3 py-1.5 hover:bg-orange-500 hover:text-black hover:border-orange-500 transition flex items-center gap-1 interactive-target">REPO ↗</a>
+                    <div class="flex flex-wrap gap-1 lg:justify-end text-[9px] mono text-neutral-500">
+                        <span>HTML</span> • <span>CSS</span> • <span>JS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-10 text-center">
+            <a href="https://github.com/Rakesh-iku" target="_blank" class="inline-flex items-center gap-2 border border-neutral-800 bg-neutral-900 px-6 py-3 text-xs font-bold tracking-widest text-neutral-300 hover:bg-white hover:text-black transition mono interactive-target">
+                ALL REPOSITORIES ON GITHUB 🐙
+            </a>
+        </div>
+    </section>
+
+    <section id="education" class="px-6 lg:px-20 py-20 grid grid-cols-1 lg:grid-cols-12 gap-12 border-t border-neutral-900">
+        <div class="lg:col-span-12">
+            <span class="text-xs text-neutral-500 tracking-widest mono block mb-2">006 / ACADEMIC / RECORD</span>
+            <h2 class="text-5xl md:text-7xl font-extrabold tracking-tighter uppercase interactive-target">THE PAPER<br>TRAIL.</h2>
+            <p class="text-xs text-neutral-400 tracking-widest mono uppercase mt-2">Where the fundamentals were forged.</p>
+        </div>
+
+        <div class="lg:col-span-7 space-y-8 border-t border-neutral-800 pt-8">
+            <div class="relative pl-6 border-l-2 border-orange-500 space-y-3 interactive-target">
+                <span class="text-xs mono text-neutral-500 block">2021 — 2025</span>
+                <h3 class="text-xl font-bold text-white">B.E. Information Science & Engineering</h3>
+                <p class="text-neutral-400 text-sm font-medium">SAPTHAGIRI COLLEGE OF ENGINEERING • VTU</p>
+                <p class="text-xs tracking-widest mono text-orange-500">CGPA 7.18 / 10</p>
+                <div class="flex flex-wrap gap-1.5 pt-1 text-[10px] mono text-neutral-400">
+                    <span class="bg-neutral-900 px-2 py-0.5 border border-neutral-800">DATA STRUCTURES</span>
+                    <span class="bg-neutral-900 px-2 py-0.5 border border-neutral-800">DBMS</span>
+                    <span class="bg-neutral-900 px-2 py-0.5 border border-neutral-800">WEB TECHNOLOGIES</span>
+                    <span class="bg-neutral-900 px-2 py-0.5 border border-neutral-800">ARTIFICIAL INTELLIGENCE</span>
+                </div>
+            </div>
+
+            <div class="relative pl-6 border-l-2 border-neutral-800 space-y-2 interactive-target">
+                <span class="text-xs mono text-neutral-500 block">2019 — 2021</span>
+                <h3 class="text-xl font-bold text-neutral-300">Pre-University - PCMCs</h3>
+                <p class="text-neutral-500 text-sm">DEPARTMENT OF PRE-UNIVERSITY EDUCATION</p>
+                <p class="text-xs tracking-widest mono text-neutral-400">74%</p>
+            </div>
+        </div>
+
+        <div class="lg:col-span-5 space-y-6 lg:border-l lg:border-neutral-800 lg:pl-8 border-t border-neutral-800 lg:border-t-0 pt-8 lg:pt-0">
+            <span class="text-xs tracking-widest text-neutral-500 mono uppercase block">CERTIFICATIONS / 003</span>
+            
+            <div class="space-y-4 text-xs mono">
+                <div class="border border-neutral-900 bg-neutral-900/30 p-3 flex justify-between items-center interactive-target">
+                    <div>
+                        <div class="font-bold text-white">Java Full Stack Web Development</div>
+                        <div class="text-neutral-500 text-[11px] mt-0.5">Tap Academy</div>
+                    </div>
+                    <span class="text-neutral-500">2025</span>
+                </div>
+
+                <div class="border border-neutral-900 bg-neutral-900/30 p-3 flex justify-between items-center interactive-target">
+                    <div>
+                        <div class="font-bold text-white">AI - Machine Learning Engineer</div>
+                        <div class="text-neutral-500 text-[11px] mt-0.5">Rooman Technologies Pvt Ltd</div>
+                    </div>
+                    <span class="text-neutral-500">2025</span>
+                </div>
+
+                <div class="border border-neutral-900 bg-neutral-900/30 p-3 flex justify-between items-center interactive-target">
+                    <div>
+                        <div class="font-bold text-white">Python Programming</div>
+                        <div class="text-neutral-500 text-[11px] mt-0.5">Altintak Solutions Pvt Ltd</div>
+                    </div>
+                    <span class="text-neutral-500">2023</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="px-6 lg:px-20 py-20 border-t border-neutral-900 bg-[#0d0d0d] grid grid-cols-1 lg:grid-cols-12 gap-12 relative">
+        <div class="lg:col-span-7 flex flex-col justify-between space-y-12">
+            <div class="space-y-4">
+                <div class="text-xs tracking-widest text-orange-500 mono uppercase">
+                    007 / <span class="text-neutral-400">CONTACT / 24H REPLY</span>
+                </div>
+                <h2 class="text-6xl md:text-8xl font-extrabold tracking-tighter uppercase leading-none select-none interactive-target">
+                    LET'S BUILD<br>SOMETHING.
+                </h2>
+            </div>
+
+            <div>
+                <h3 class="text-4xl md:text-6xl font-extrabold tracking-tight text-neutral-200 select-none interactive-target flex items-end flex-wrap gap-2">
+                    HELLO@ <span class="text-white relative bg-neutral-900 px-3 py-1 border border-neutral-800">RAKESH R<span class="inline-block w-4 h-8 bg-orange-500 ml-2 align-middle"></span></span>
+                </h3>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-4 pt-8 border-t border-neutral-800 text-xs mono text-neutral-400">
+                <div class="space-y-1">
+                    <div class="text-neutral-600 text-[10px] tracking-widest uppercase">EMAIL</div>
+                    <a href="mailto:rakeshravi1960@gmail.com" class="text-white hover:text-orange-500 transition text-sm font-medium interactive-target">rakeshravi1960@gmail.com</a>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-neutral-600 text-[10px] tracking-widest uppercase">BASED IN</div>
+                    <div class="text-white text-sm font-medium">Bengaluru, India</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-neutral-600 text-[10px] tracking-widest uppercase">GITHUB</div>
+                    <a href="https://github.com/Rakesh-iku" target="_blank" class="text-white hover:text-orange-500 transition text-sm font-medium interactive-target">@Rakesh-iku</a>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-neutral-600 text-[10px] tracking-widest uppercase">STATUS</div>
+                    <div class="text-orange-500 text-sm font-medium tracking-wide">Available Q1 2026</div>
+                </div>
+
+                <div class="sm:col-span-2 flex flex-wrap gap-3 pt-4">
+                    <a href="https://github.com/Rakesh-iku" target="_blank" class="border border-neutral-800 px-4 py-2 hover:bg-orange-500 hover:text-black hover:border-orange-500 transition tracking-wider flex items-center gap-2 interactive-target">
+                        <span class="text-[10px]">🐙</span> GITHUB
+                    </a>
+                    <a href="https://www.linkedin.com/in/rakesh-r-01129a329/" class="border border-neutral-800 px-4 py-2 hover:bg-orange-500 hover:text-black hover:border-orange-500 transition tracking-wider flex items-center gap-2 interactive-target">
+                        <span class="text-[10px]">💼</span> LINKEDIN
+                    </a>
+                    <a href="mailto:rakeshravi1960@gmail.com" class="border border-neutral-800 px-4 py-2 hover:bg-orange-500 hover:text-black hover:border-orange-500 transition tracking-wider flex items-center gap-2 interactive-target">
+                        <span class="text-[10px]">✉️</span> EMAIL
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:col-span-5 flex flex-col justify-between space-y-8 border border-neutral-800 bg-neutral-900/10 p-6 sm:p-8 relative">
+            <div class="text-right text-xs text-neutral-400 font-light max-w-xs ml-auto leading-relaxed">
+                Drop a line. Hiring, collab, or just to talk shop.
+            </div>
+
+            <form id="contact-form" class="space-y-8 pt-6">
+                <div class="text-[10px] tracking-widest mono text-neutral-600 uppercase">SEND A MESSAGE / 003</div>
+                
+                <div class="space-y-2 relative">
+                    <label class="block text-[10px] font-bold tracking-widest text-neutral-400 mono uppercase">NAME</label>
+                    <input type="text" name="name" required placeholder="Your name" class="w-full bg-transparent border-b border-neutral-800 focus:border-orange-500 py-2 text-sm text-white font-light tracking-wide outline-none transition placeholder-neutral-700 interactive-target">
+                </div>
+
+                <div class="space-y-2 relative">
+                    <label class="block text-[10px] font-bold tracking-widest text-neutral-400 mono uppercase">EMAIL</label>
+                    <input type="email" name="email" required placeholder="you@domain.com" class="w-full bg-transparent border-b border-neutral-800 focus:border-orange-500 py-2 text-sm text-white font-light tracking-wide outline-none transition placeholder-neutral-700 interactive-target">
+                </div>
+
+                <div class="space-y-2 relative">
+                    <label class="block text-[10px] font-bold tracking-widest text-neutral-400 mono uppercase">MESSAGE</label>
+                    <textarea rows="3" name="message" required placeholder="What's the brief?" class="w-full bg-transparent border border-neutral-800 focus:border-orange-500 p-3 text-sm text-white font-light tracking-wide outline-none transition placeholder-neutral-700 resize-none interactive-target"></textarea>
+                </div>
+
+                <div id="form-error" class="hidden text-xs mono text-orange-500"></div>
+
+                <button type="submit" id="submit-btn" class="w-full border border-neutral-700 bg-neutral-900/50 hover:bg-orange-500 hover:text-black hover:border-orange-500 transition py-4 text-xs font-bold tracking-widest text-neutral-300 mono flex items-center justify-center gap-2 interactive-target">
+                    <span id="submit-btn-text">TRANSMIT MESSAGE</span> <span class="text-sm">➔</span>
+                </button>
+            </form>
+
+            <div id="thank-you-message" class="hidden pt-6 text-center space-y-4">
+                <div class="text-4xl">✅</div>
+                <h3 class="text-xl font-bold text-white tracking-tight">MESSAGE TRANSMITTED</h3>
+                <p class="text-neutral-400 text-sm leading-relaxed">Thank you for reaching out. I've received your message and will reply within 24 hours.</p>
+                <button id="send-another-btn" type="button" class="border border-neutral-700 px-4 py-2 text-xs font-bold tracking-widest text-neutral-300 hover:bg-orange-500 hover:text-black hover:border-orange-500 transition mono interactive-target">
+                    SEND ANOTHER
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-neutral-900 px-6 lg:px-20 py-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] mono text-neutral-500">
+        <div class="interactive-target uppercase tracking-wider">&copy; 2026 RAKESH R • DESIGNED & CODED IN BENGALURU</div>
+        <div class="flex space-x-6 uppercase tracking-wider">
+            <a href="https://github.com/Rakesh-iku" target="_blank" class="hover:text-orange-500 transition interactive-target">GITHUB</a>
+            <a href="https://www.linkedin.com/in/rakesh-r-01129a329/" class="hover:text-orange-500 transition interactive-target">LINKEDIN</a>
+            <a href="mailto:rakeshravi1960@gmail.com" class="hover:text-orange-500 transition interactive-target">EMAIL</a>
+        </div>
+    </footer>
+
+    <script>
+        const cursor = document.getElementById('custom-cursor');
+
+        // Smooth follow interaction
+        window.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Event listener system for cursor expansion rules
+        function updateCursorTargets() {
+            const interactiveElements = document.querySelectorAll('.interactive-target, a, button, input, textarea, .border-neutral-800');
+            
+            interactiveElements.forEach(elem => {
+                elem.addEventListener('mouseenter', () => {
+                    cursor.classList.add('grow');
+                });
+                elem.addEventListener('mouseleave', () => {
+                    cursor.classList.remove('grow');
+                });
+            });
+        }
+        
+        // Run targets initially
+        updateCursorTargets();
+
+        // CONTACT FORM — sends message directly to Gmail via EmailJS
+        const contactForm = document.getElementById('contact-form');
+        const thankYouMessage = document.getElementById('thank-you-message');
+        const submitBtn = document.getElementById('submit-btn');
+        const submitBtnText = document.getElementById('submit-btn-text');
+        const sendAnotherBtn = document.getElementById('send-another-btn');
+        const formError = document.getElementById('form-error');
+
+        // EmailJS credentials
+        const EMAILJS_PUBLIC_KEY = 'Jje4bvy1BdRGzmnLS';
+        const EMAILJS_SERVICE_ID = 'rakeshravi1960@gmail.com';
+        const EMAILJS_TEMPLATE_ID = 'template_vkwyjmu';
+
+        if (window.emailjs) {
+            emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+        }
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                formError.classList.add('hidden');
+                submitBtn.disabled = true;
+                submitBtnText.textContent = 'SENDING...';
+
+                const formData = new FormData(contactForm);
+                const templateParams = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    message: formData.get('message')
+                };
+
+                emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+                    .then(() => {
+                        contactForm.classList.add('hidden');
+                        thankYouMessage.classList.remove('hidden');
+                        updateCursorTargets();
+                    })
+                    .catch((err) => {
+                        console.error('EmailJS error:', err);
+                        submitBtn.disabled = false;
+                        submitBtnText.textContent = 'TRANSMIT MESSAGE';
+                        formError.textContent = 'Something went wrong sending your message. Please try again or email directly at rakeshravi1960@gmail.com.';
+                        formError.classList.remove('hidden');
+                    });
+            });
+        }
+
+        if (sendAnotherBtn) {
+            sendAnotherBtn.addEventListener('click', function () {
+                contactForm.reset();
+                thankYouMessage.classList.add('hidden');
+                contactForm.classList.remove('hidden');
+                submitBtn.disabled = false;
+                submitBtnText.textContent = 'TRANSMIT MESSAGE';
+            });
+        }
+    </script>
+</body>
+</html>
